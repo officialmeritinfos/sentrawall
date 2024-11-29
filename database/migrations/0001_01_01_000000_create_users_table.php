@@ -16,10 +16,23 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('password')->nullable();
+            $table->string('country');
+            $table->string('countryCode');
+            $table->string('role')->nullable(); // e.g., Developer, Business Owner, IT Manager
+            $table->string('company')->nullable(); // For users representing organizations
+            $table->string('website')->nullable(); // Optional, for business users
+            $table->string('phone')->nullable(); // To reach out if needed
+            $table->string('referral_source')->nullable(); // How they heard about the service
+            $table->string('interest_level')->nullable(); // e.g., High, Medium, Low (optional dropdown)
+            $table->string('use_case')->nullable(); // e.g., Personal, Business, Enterprise
+            $table->boolean('newsletter_subscribed')->default(true); // Opt-in for newsletters
+            $table->string('waitlist_status')->default('pending'); // Pending, Approved, etc.
+            $table->string('ip_address')->nullable(); // For geographic analytics
+            $table->string('device')->nullable(); // Device used for registration
             $table->timestamps();
         });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
