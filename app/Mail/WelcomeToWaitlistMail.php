@@ -31,7 +31,7 @@ class WelcomeToWaitlistMail extends Mailable
     {
         return new Envelope(
             from: new Address(config('mail.from.address'), config('mail.from.name')),
-            subject: 'Verify Your Email for '.config('app.name').' Waitlist',
+            subject: 'Welcome to the '.config('app.name').' Waitlist',
         );
     }
 
