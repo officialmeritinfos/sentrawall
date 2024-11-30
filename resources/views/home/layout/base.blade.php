@@ -53,6 +53,7 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap');
         @import url('https://fonts.cdnfonts.com/css/clash-display');
     </style>
+    @include('genericCss')
 </head>
 
 <body>
@@ -171,5 +172,7 @@
     })(document);
 </script>
 <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+@include('basicInclude')
 </body>
 </html>

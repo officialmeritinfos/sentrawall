@@ -24,4 +24,4 @@ Route::prefix('legal')->group(function () {
 });
 
 Route::post('wait-list/join',[WaitListController::class,'joinWaitList'])->name('wait-list.join');
-Route::post('wait-list/verify/{token}',[WaitListController::class,'joinWaitList'])->name('wait-list.verify')->middleware('signed');
+Route::get('wait-list/verify/{token}',[WaitListController::class,'joinWaitList'])->name('wait-list.verify')->middleware('signed');
