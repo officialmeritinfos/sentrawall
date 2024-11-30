@@ -5,6 +5,7 @@ namespace App\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class ReCaptcha implements ValidationRule
 {
@@ -17,10 +18,12 @@ class ReCaptcha implements ValidationRule
     {
         $gResponseToken = (string) $value;
 
-        $response = Http::asForm()->post(
-            '<https://www.google.com/recaptcha/api/siteverify>',
+        $response = Http::post(
+            'https://www.google.com/recaptcha/api/siteverify',
             ['secret' => env('RECAPTCHA_SECRET_KEY'), 'response' => $gResponseToken]
         );
+
+        Log::info($response);
 
         if (!json_decode($response->body(), true)['success']) {
             $fail('Invalid recaptcha');
