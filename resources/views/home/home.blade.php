@@ -538,105 +538,92 @@
             <div class="contact-2_form-section padding-top-120 padding-bottom-100" id="wait-list">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="contact_main-comment-box-wrapper border-none">
-                                <div class="contact_main-comment-box__inner">
-                                    <div class="form-box-style__form-wrapper">
-                                        <form class="form-box-style"  id="waitlistForm" action="{{ route('wait-list.join') }}">
-                                            @csrf
-                                            <div class="row form--row-custom form-box-style__form-inner">
-                                                <div class="col-lg-6 col-12">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Your name</h3>
-                                                        <input class="form-control bg-light-2" type="text" placeholder="Enter your full name"
-                                                               name="name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-12 ">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Email address</h3>
-                                                        <input class="form-control bg-light-2" type="text" placeholder="Enter your email"
-                                                               name="email">
-                                                    </div>
-                                                </div>
-                                                <div class=" col-12 col-md-6">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Role</h3>
-                                                        <select name="role" id="role" class="form-control" required>
-                                                            <option value="">Select Your Role</option>
-                                                            <option value="Developer">Developer</option>
-                                                            <option value="Business Owner">Business Owner</option>
-                                                            <option value="IT Professional">IT Professional</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class=" col-12 col-md-6">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Company/Organization (optional)</h3>
-                                                        <input type="text" name="company" id="company" class="form-control" placeholder="Enter your company name (optional)">
-                                                    </div>
-                                                </div>
-                                                <div class=" col-12 col-md-6">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Use Case</h3>
-                                                        <select name="use_case" id="use_case" class="form-control" required>
-                                                            <option value="">Select Use Case</option>
-                                                            <option value="Personal">Personal</option>
-                                                            <option value="Business">Business</option>
-                                                            <option value="Enterprise">Enterprise</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class=" col-12 col-md-6">
-                                                    <div class="form-box-style__form-input">
-                                                        <h3 class="form-box-style-title">Interest Level</h3>
-                                                        <select name="interest_level" id="interest_level" class="form-control" required>
-                                                            <option value="">Select Your Interest Level</option>
-                                                            <option value="High">High</option>
-                                                            <option value="Medium">Medium</option>
-                                                            <option value="Low">Low</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-2">
-
-                                                    <div class="col-md-12">
-
-                                                        <div class="form-group">
-
-                                                            <strong>ReCaptcha:</strong>
-
-                                                            <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-
-                                                            @if ($errors->has('g-recaptcha-response'))
-
-                                                                <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-
-                                                            @endif
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="account-condition-block">
-                                                    <div id="item-list">
-                                                        <span class="account-condition">You agree to our <a href="{{ route('legal.privacy') }}" >Privacy Policy</a></span>
-                                                    </div>
-                                                </div>
+                        <div class="col-lg-10 col-12 border border-5">
+                            <div class="form-box-style__form-wrapper bg-light-2">
+                                <form class="form-box-style"  id="waitlistForm" action="{{ route('wait-list.join') }}">
+                                    @csrf
+                                    <div class="form-box-style__form-inner row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Your name</h3>
+                                                <input class="form-control bg-light-2" type="text" placeholder="Enter your full name"
+                                                       name="name">
                                             </div>
-                                            <div class="form-box-style__form-input-button text-center">
-                                                <button type="submit" class="btn-masco rounded-pill" id="joinWaitlistButton">
-                                                    <span id="buttonText">Join Wait-list</span>
-                                                    <span id="buttonSpinner" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
-                                                </button>
+                                        </div>
+                                        <div class="col-lg-6 col-12 ">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Email address</h3>
+                                                <input class="form-control bg-light-2" type="text" placeholder="Enter your email"
+                                                       name="email">
                                             </div>
+                                        </div>
+                                        <div class=" col-12 col-md-6">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Role</h3>
+                                                <select name="role" id="role" class="form-control" required>
+                                                    <option value="">Select Your Role</option>
+                                                    <option value="Developer">Developer</option>
+                                                    <option value="Business Owner">Business Owner</option>
+                                                    <option value="IT Professional">IT Professional</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class=" col-12 col-md-6">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Company/Organization (optional)</h3>
+                                                <input type="text" name="company" id="company" class="form-control" placeholder="Enter your company name (optional)">
+                                            </div>
+                                        </div>
+                                        <div class=" col-12 col-md-6">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Use Case</h3>
+                                                <select name="use_case" id="use_case" class="form-control" required>
+                                                    <option value="">Select Use Case</option>
+                                                    <option value="Personal">Personal</option>
+                                                    <option value="Business">Business</option>
+                                                    <option value="Enterprise">Enterprise</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class=" col-12 col-md-6">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">Interest Level</h3>
+                                                <select name="interest_level" id="interest_level" class="form-control" required>
+                                                    <option value="">Select Your Interest Level</option>
+                                                    <option value="High">High</option>
+                                                    <option value="Medium">Medium</option>
+                                                    <option value="Low">Low</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class=" col-12 col-md-6">
+                                            <div class="form-box-style__form-input">
+                                                <h3 class="form-box-style-title">ReCaptcha</h3>
+                                                <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
 
-                                        </form>
-                                        <div id="responseMessage" style="margin-top: 10px;"></div>
+                                                @if ($errors->has('g-recaptcha-response'))
+
+                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <div class="account-condition-block">
+                                            <div id="item-list">
+                                                <span class="account-condition">You agree to our <a href="{{ route('legal.privacy') }}" >Privacy Policy</a></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="form-box-style__form-input-button text-center">
+                                        <button type="submit" class="btn-masco rounded-pill" id="joinWaitlistButton">
+                                            <span id="buttonText">Join Wait-list</span>
+                                            <span id="buttonSpinner" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                </form>
+                                <div id="responseMessage" style="margin-top: 10px;"></div>
                             </div>
                         </div>
                     </div>
