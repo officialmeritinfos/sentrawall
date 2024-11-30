@@ -58,7 +58,7 @@
 <body>
 <div class="container">
     <div class="header">
-        <img src="{{ $web->logo }}" alt="{{ config('app.name') }} Logo">
+        <img src="{{ asset($web->logo) }}" alt="{{ config('app.name') }} Logo">
         <h1>Welcome to {{ config('app.name') }}</h1>
     </div>
     <div class="content">
