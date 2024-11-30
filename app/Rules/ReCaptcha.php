@@ -23,7 +23,6 @@ class ReCaptcha implements ValidationRule
             ['secret' => env('RECAPTCHA_SECRET_KEY'), 'response' => $value]
         );
 
-        Log::info($response);
 
         if (!json_decode($response->body(), true)['success']) {
             $fail('Invalid recaptcha');
