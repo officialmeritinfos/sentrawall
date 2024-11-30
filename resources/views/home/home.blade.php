@@ -599,13 +599,7 @@
                                         <div class=" col-12 col-md-6">
                                             <div class="form-box-style__form-input">
                                                 <h3 class="form-box-style-title">ReCaptcha</h3>
-                                                <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-
-                                                @if ($errors->has('g-recaptcha-response'))
-
-                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-
-                                                @endif
+                                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                             </div>
                                         </div>
 
